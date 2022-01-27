@@ -13,6 +13,7 @@ import java.util.List;
 /**
  * @author Samuel Mbugua
  */
+@CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping("customers")
 public class CustomerController {
