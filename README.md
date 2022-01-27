@@ -12,11 +12,12 @@ This repository comprises two apps. JPAY backend app and jpay-angular app
 
 # How to run
 
-##Local
+## Local
+
 To run the app locally simply clone the project navigate to JPAY `cd JPAY` then run `gradle bootRun`
 The app will be available on `http://localhost:8000`
 
-##Docker
+## Docker
 
 To build an image run:
 >`docker build . -t jpay-service:version`
@@ -33,13 +34,13 @@ The app will be available on `http://localhost:8000`
 
 # How to run
 
-##Local
+## Local
 To run the app locally simply clone the project navigate to jpay-angular `cd jpay-angular`<br>
 To install dependencies run `npm install` <br>
 To run the application after installation run `npm run start` <br>
 The app will be available on `http://localhost:4200`
 
-##Docker
+## Docker
 
 To build an image run:
 >`docker build . -t jpay-angular-app:version`
