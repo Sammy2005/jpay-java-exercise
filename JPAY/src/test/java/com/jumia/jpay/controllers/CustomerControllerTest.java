@@ -6,8 +6,6 @@ import com.jumia.jpay.services.CustomerService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Configuration;
@@ -22,9 +20,9 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 
 @Configuration
 @RunWith(SpringRunner.class)
@@ -50,7 +48,7 @@ class CustomerControllerTest extends AbstractControllerTest {
 
     @Test
     void findAllCustomers() throws Exception {
-        when(customerService.findAllCustomers(pageable)).thenReturn(getCustomerDtoResult());
+        when(customerService.findAllCustomers(any())).thenReturn(getCustomerDtoResult());
 
         var result = mvc
                 .perform(MockMvcRequestBuilders.get(baseUrl)

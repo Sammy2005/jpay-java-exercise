@@ -12,7 +12,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 import java.io.IOException;
 
-@SpringBootTest(classes = CustomerController.class)
+@SpringBootTest(classes = JpayApplication.class)
 @WebAppConfiguration
 public abstract class AbstractControllerTest {
 
