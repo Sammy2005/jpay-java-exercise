@@ -5,12 +5,12 @@ This repository comprises two apps. JPAY backend app and jpay-angular app
 > Track customer details with refined dashboard. Unique features like filter and search available<br>
 > Ability to get customized page sizes has been added in the latest release.
 
-## ✨ JPAY
+# ✨ JPAY
 > Spring boot app run in java. <br>
 > Has a SQLite database for storage.
 
 
-## How to run
+# How to run
 
 ##Local
 To run the app locally simply clone the project navigate to JPAY `cd JPAY` then run `gradle bootRun`
@@ -27,11 +27,11 @@ To run the image after build run:
 
 The app will be available on `http://localhost:8000`
 
-## ✨ jpay-angular
+# ✨ jpay-angular
 > This is an angular based application
 > Makes use of libraries such as primeng and tailwindcss for styling
 
-## How to run
+# How to run
 
 ##Local
 To run the app locally simply clone the project navigate to jpay-angular `cd jpay-angular`<br>
@@ -48,7 +48,7 @@ To run the image just build run:
 >`docker run -p 8000:8000 jpay-angular-app:version` <br>
 
 
-## ✨ To Build The App On Docker Compose
+# ✨ To Build The App On Docker Compose
 
 Ensure you have docker compose installed on you machine. <br>
 If not follow the following link to install [docker-impose](https://docs.docker.com/compose/install/)
