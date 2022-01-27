@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: jpay-customer-service
+
+  jpa:
+    database-platform: org.sqlite.hibernate.dialect.SQLiteDialect
+    hibernate:
+      ddl-auto: update
+
+  datasource:
+    url: jdbc:sqlite:sample.db
+    driver-class-name: org.sqlite.JDBC
+
+
+server:
+  port: 8000
