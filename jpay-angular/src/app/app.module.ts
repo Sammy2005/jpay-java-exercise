@@ -7,18 +7,21 @@ import {CustomersComponent} from './customers/customers.component';
 import {CustomersModule} from "./customers/customers.module";
 import {TableModule} from "primeng/table";
 import {HttpClientModule} from "@angular/common/http";
+import {CardModule} from "primeng/card";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
-    AppComponent,
-    CustomersComponent
+    AppComponent
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     CustomersModule,
-    TableModule
+    TableModule,
+    CardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

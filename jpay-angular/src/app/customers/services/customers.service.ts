@@ -6,6 +6,7 @@ import {Customer} from "../../models/Customer";
 
 const baseUrl = environment.baseUrl;
 const getCustomerUrl = baseUrl + environment.apiUrl.getAllCustomers;
+const searchCustomerUrl = baseUrl + environment.apiUrl.filterCustomers;
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,10 @@ export class CustomersService {
   }
 
   findAllCustomers(): Observable<Customer[]> {
-    return this.httpClient.get<Customer[]>(getCustomerUrl, {headers: this.httpOptions})
+    return this.httpClient.get<Customer[]>(getCustomerUrl.concat("?page=0&size=40"), {headers: this.httpOptions})
+  }
+
+  searchForCustomers(value: string):Observable<Customer[]> {
+    return this.httpClient.get<Customer[]>(getCustomerUrl, {params: {}, headers: this.httpOptions})
   }
 }

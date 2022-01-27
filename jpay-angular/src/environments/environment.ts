@@ -8,7 +8,8 @@ export const environment = {
 
   apiUrl: {
     /*customers*/
-    getAllCustomers: '/customers'
+    getAllCustomers: '/customers',
+    filterCustomers: '/customers/filter'
   }
 };
 
