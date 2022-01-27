@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * @author Samuel Mbugua
  */
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin(value = {"http://localhost:4200", "http://localhost"})
 @RestController
 @RequestMapping("customers")
 public class CustomerController {

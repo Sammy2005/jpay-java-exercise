@@ -1,0 +1,28 @@
+version: '3.7'
+services:
+  angular:
+    build:
+      context: jpay-angular
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "80:80"
+    container_name: jpay-angular-app
+    environment:
+      API_URL: http://jpay-service:8000
+    networks:
+      - jpay
+
+  jpay-service:
+    build:
+      context: ./JPAY
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8000:8000"
+    container_name: jpay-service
+    networks:
+      - jpay
+
+networks:
+  jpay:

@@ -1,10 +1,10 @@
 # Use the official gradle image to create a build artifact.
 # https://hub.kube.com/_/gradle
 FROM gradle:7.2-alpine  as builder
-COPY build.gradle .
-COPY gradle.properties .
-COPY settings.gradle .
-COPY src ./src
+
+WORKDIR /app
+
+COPY . .
 
 # Build a release artifact.
 RUN gradle build
@@ -15,10 +15,13 @@ RUN gradle build
 # https://docs.kube.com/develop/develop-images/multistage-build/#use-multi-stage-builds
 FROM adoptopenjdk/openjdk11:jdk-11.0.11_9-alpine-slim
 
+WORKDIR /app
+
 # Copy the jar to the production image from the builder stage.
-COPY --from=builder /home/gradle/build/libs/*-SNAPSHOT.jar /jpay.jar
+COPY --from=builder /app/build/libs/*-SNAPSHOT.jar jpay.jar
+COPY --from=builder /app/sample.db .
 
 # Run the web service on container startup.
-CMD ["java", "-jar", "-Djava.security.egd=file:/dev/./urandom", "/jpay.jar" ]
+CMD ["java", "-jar", "-Djava.security.egd=file:/dev/./urandom", "jpay.jar" ]
 
 EXPOSE 8000
